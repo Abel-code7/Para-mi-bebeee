@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
+
+<title>🍫 Para Mi Amor ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:Georgia,serif;
+    background:linear-gradient(
+        180deg,
+        #2b1008,
+        #542313,
+        #7b3820,
+        #35120b
+    );
+    color:white;
+}
+
+/* FONDO */
+
+#corazones{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.corazon{
+    position:absolute;
+    bottom:-40px;
+    animation:subir 7s linear forwards;
+    opacity:.8;
+}
+
+@keyframes subir{
+    0%{
+        transform:translateY(0) scale(.7) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh)
+                   scale(1.3)
+                   rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* CONTENIDO */
+
+.contenedor{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:480px;
+    margin:auto;
+    padding:15px;
+}
+
+/* PORTADA */
+
+.portada{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.tarjeta{
+    width:100%;
+    padding:35px 20px;
+    text-align:center;
+
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:30px;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.45);
+}
+
+.chocolate{
+    font-size:75px;
+    animation:flotar 2.5s ease-in-out infinite;
+}
+
+@keyframes flotar{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.para{
+    margin-top:15px;
+    font-size:15px;
+    color:#ffd8c5;
+}
+
+h1{
+    margin-top:15px;
+    font-size:42px;
+    line-height:1.05;
+    color:#ffe4d6;
+}
+
+.descripcion{
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.6;
+    color:#fff2eb;
+}
+
+/* BOTÓN */
+
+.boton{
+    margin-top:30px;
+    width:100%;
+    padding:17px 10px;
+
+    border:0;
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #ff8f70,
+        #e84e70
+    );
+
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.4);
+}
+
+.boton:active{
+    transform:scale(.96);
+}
+
+/* CARTA */
+
+.carta{
+    display:none;
+    margin-top:20px;
+
+    padding:27px 20px;
+
+    background:#fff5ee;
+    color:#4a2115;
+
+    border-radius:25px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.4);
+}
+
+.carta.visible{
+    display:block;
+    animation:aparecer .8s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.carta h2{
+    text-align:center;
+    font-size:27px;
+    color:#71301d;
+    margin-bottom:22px;
+}
+
+.carta p{
+    font-size:17px;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+.firma{
+    text-align:right;
+    font-size:20px;
+    color:#9b4051;
+    font-style:italic;
+}
+
+/* CHOCOLATES */
+
+.seccion{
+    margin-top:35px;
+    text-align:center;
+}
+
+.seccion h2{
+    font-size:27px;
+    color:#ffe0d1;
+    margin-bottom:20px;
+}
+
+.chocolate-card{
+    width:100%;
+    padding:22px;
+    margin-bottom:14px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        145deg,
+        #71351e,
+        #2a0e08
+    );
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.3);
+}
+
+.chocolate-card .emoji{
+    font-size:48px;
+}
+
+.chocolate-card p{
+    margin-top:8px;
+    font-size:16px;
+}
+
+/* PROMESA */
+
+.promesa{
+    margin-top:35px;
+    padding:30px 20px;
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.corazon-grande{
+    font-size:60px;
+    animation:latir 1.2s infinite;
+}
+
+@keyframeslatir{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+.promesa h2{
+    margin:15px 0;
+    color:#ffd9c8;
+}
+
+.promesa p{
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* FINAL */
+
+.final{
+    text-align:center;
+    padding:50px 10px 30px;
+}
+
+.final h2{
+    font-size:32px;
+    line-height:1.2;
+    color:#ffe1d2;
+}
+
+.final p{
+    margin-top:18px;
+    font-size:17px;
+    line-height:1.7;
+}
+
+.firma-final{
+    margin-top:20px;
+    font-size:22px;
+    color:#ffb5a1;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:20px 5px 30px;
+    font-size:13px;
+    color:#dcb6aa;
+}
+
+/* PANTALLAS MUY PEQUEÑAS */
+
+@media(max-width:350px){
+
+    h1{
+        font-size:36px;
+    }
+
+    .chocolate{
+        font-size:65px;
+    }
+
+    .carta p{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div id="corazones"></div>
+
+
+<div class="contenedor">
+
+    <!-- PORTADA -->
+
+    <section class="portada">
+
+        <div class="tarjeta">
+
+            <div class="chocolate">
+                🍫
+            </div>
+
+            <div class="para">
+                PARA LA NIÑA MÁS DULCE ❤️
+            </div>
+
+            <h1>
+                Feliz Día del Chocolate
+            </h1>
+
+            <p class="descripcion">
+                Hoy quiero regalarte algo más dulce
+                que cualquier chocolate...
+                unas palabras directamente de mi corazón. ❤️
+            </p>
+
+            <button class="boton"
+                    onclick="abrirCarta()">
+                💌 ABRIR MI CARTA
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARTA -->
+
+    <section class="carta" id="carta">
+
+        <h2>
+            🍫 Para mi chocolate favorito ❤️
+        </h2>
+
+        <p>
+            Hola, mi vida ❤️.
+        </p>
+
+        <p>
+            Hoy es el Día del Chocolate y quería
+            aprovechar este día para recordarte
+            lo especial que eres para mí.
+        </p>
+
+        <p>
+            Dicen que el chocolate es dulce,
+            pero sinceramente creo que nunca
+            han conocido a alguien como tú.
+        </p>
+
+        <p>
+            Porque tú tienes una forma de hacer
+            mis días más bonitos simplemente
+            estando conmigo.
+        </p>
+
+        <p>
+            Cada mensaje tuyo, cada sonrisa,
+            cada palabra bonita y cada momento
+            que compartimos significa muchísimo
+            para mí.
+        </p>
+
+        <p>
+            Si tuviera que elegir entre todos
+            los chocolates del mundo y tú,
+            te elegiría a ti una y mil veces. ❤️
+        </p>
+
+        <p>
+            El chocolate puede acabarse,
+            pero espero que nuestro amor
+            nunca tenga un final.
+        </p>
+
+        <p>
+            Gracias por existir, mi niña bonita.
+            Gracias por llegar a mi vida y
+            hacerla mucho más dulce. 🥰
+        </p>
+
+        <div class="firma">
+            Con todo mi amor,<br>
+            tu enamorado ❤️
+        </div>
+
+    </section>
+
+
+    <!-- CHOCOLATES -->
+
+    <section class="seccion">
+
+        <h2>
+            🍫 Un poquito de dulzura
+        </h2>
+
+        <div class="chocolate-card">
+
+            <div class="emoji">🍫</div>
+
+            <p>
+                Un chocolate por cada sonrisa
+                que me regalas.
+            </p>
+
+        </div>
+
+
+        <div class="chocolate-card">
+
+            <div class="emoji">❤️</div>
+
+            <p>
+                Un corazón por cada momento
+                bonito que vivimos.
+            </p>
+
+        </div>
+
+
+        <div class="chocolate-card">
+
+            <div class="emoji">🥰</div>
+
+            <p>
+                Un beso por cada vez que
+                pienso en ti.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROMESA -->
+
+    <section class="promesa">
+
+        <div class="corazon-grande">
+            ❤️
+        </div>
+
+        <h2>
+            Una promesa para ti
+        </h2>
+
+        <p>
+            Quiero seguir compartiendo contigo
+            momentos bonitos, risas, abrazos,
+            besitos y muchísimas historias.
+            Quiero seguir haciendo todo lo posible
+            para que nunca olvides lo mucho
+            que te amo.
+        </p>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="final">
+
+        <h2>
+            Tú eres mi chocolate favorito 🍫❤️
+        </h2>
+
+        <p>
+            Feliz Día del Chocolate, mi amor.
+            Espero que este pequeño detalle
+            te saque una sonrisa.
+        </p>
+
+        <div class="firma-final">
+            Te amo muchísimo, mi niña bonita ❤️
+        </div>
+
+    </section>
+
+
+    <footer>
+        Hecho especialmente para ti 🍫❤️
+    </footer>
+
+</div>
+
+
+<script>
+
+/* CORAZONES */
+
+const contenedor =
+    document.getElementById("corazones");
+
+function crearCorazon(){
+
+    const corazon =
+        document.createElement("div");
+
+    corazon.className="corazon";
+
+    const emojis=[
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "🤎"
+    ];
+
+    corazon.innerHTML =
+        emojis[
+            Math.floor(
+                Math.random()*emojis.length
+            )
+        ];
+
+    corazon.style.left =
+        Math.random()*100+"%";
+
+    corazon.style.fontSize =
+        (15+Math.random()*20)+"px";
+
+    corazon.style.animationDuration =
+        (5+Math.random()*5)+"s";
+
+    contenedor.appendChild(corazon);
+
+    setTimeout(()=>{
+        corazon.remove();
+    },10000);
+}
+
+setInterval(crearCorazon,600);
+
+
+/* ABRIR CARTA */
+
+function abrirCarta(){
+
+    const carta =
+        document.getElementById("carta");
+
+    carta.classList.add("visible");
+
+    setTimeout(()=>{
+
+        carta.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    },100);
+
+    explosion();
+}
+
+
+/* EXPLOSIÓN */
+
+function explosion(){
+
+    for(let i=0;i<30;i++){
+
+        const corazon =
+            document.createElement("div");
+
+        corazon.innerHTML="❤️";
+
+        corazon.style.position="fixed";
+        corazon.style.left="50%";
+        corazon.style.top="50%";
+        corazon.style.zIndex="9999";
+        corazon.style.fontSize="22px";
+        corazon.style.pointerEvents="none";
+
+        const x =
+            (Math.random()-.5)*500;
+
+        const y =
+            (Math.random()-.5)*600;
+
+        corazon.animate(
+            [
+                {
+                    transform:
+                    "translate(-50%,-50%) scale(0)",
+                    opacity:1
+                },
+
+                {
+                    transform:
+                    `translate(
+                        calc(-50% + ${x}px),
+                        calc(-50% + ${y}px)
+                    ) scale(1.5)`,
+                    opacity:0
+                }
+            ],
+            {
+                duration:1200,
+                easing:"ease-out"
+            }
+        );
+
+        document.body.appendChild(corazon);
+
+        setTimeout(()=>{
+            corazon.remove();
+        },1300);
+    }
+}
+
+</script>
+
+</body>
+</html>
